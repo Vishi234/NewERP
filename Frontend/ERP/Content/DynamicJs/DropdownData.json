@@ -1,0 +1,429 @@
+{
+  "AcademicYear": [
+    {
+      "YEAR_ID": 2,
+      "ACADEMIC_YEAR": "2013-15",
+      "START_DATE": "03-Mar-2019",
+      "END_DATE": "14-Mar-2019",
+      "CUSTOMER_ID": 101,
+      "IS_ACTIVE": "70"
+    },
+    {
+      "YEAR_ID": 3,
+      "ACADEMIC_YEAR": "2012-15",
+      "START_DATE": "04-Mar-2019",
+      "END_DATE": "16-Mar-2019",
+      "CUSTOMER_ID": 101,
+      "IS_ACTIVE": "72"
+    }
+  ],
+  "Course": [
+    {
+      "COURSE_ID": 1,
+      "COURSE_TYPE": 73,
+      "COURSE_NAME": "MBA",
+      "NO_OF_SEMESTER": 6,
+      "CUSTOMER_ID": 101,
+      "IS_ACTIVE": "72"
+    },
+    {
+      "COURSE_ID": 2,
+      "COURSE_TYPE": 74,
+      "COURSE_NAME": "BBA",
+      "NO_OF_SEMESTER": 6,
+      "CUSTOMER_ID": 101,
+      "IS_ACTIVE": "70"
+    },
+    {
+      "COURSE_ID": 3,
+      "COURSE_TYPE": 74,
+      "COURSE_NAME": "MCA",
+      "NO_OF_SEMESTER": 6,
+      "CUSTOMER_ID": 101,
+      "IS_ACTIVE": "71"
+    }
+  ],
+  "Subject": [
+    {
+      "SUBJECT_ID": 2,
+      "SUBJECT_NAME": "MCA",
+      "SUBJECT_MEDIUM": "77",
+      "CUSTOMER_ID": "101"
+    },
+    {
+      "SUBJECT_ID": 3,
+      "SUBJECT_NAME": "bca",
+      "SUBJECT_MEDIUM": "77",
+      "CUSTOMER_ID": "101"
+    }
+  ],
+  "Param": [
+    {
+      "PARAM_ID": 1,
+      "PARAM_TYPE": 1,
+      "PARAM_NAME": "Active",
+      "PARAM_DESC": "ACTIVE"
+    },
+    {
+      "PARAM_ID": 2,
+      "PARAM_TYPE": 1,
+      "PARAM_NAME": "In Active",
+      "PARAM_DESC": "IN_ACTIVE"
+    },
+    {
+      "PARAM_ID": 3,
+      "PARAM_TYPE": 2,
+      "PARAM_NAME": "Temporary",
+      "PARAM_DESC": "TEMPORARY"
+    },
+    {
+      "PARAM_ID": 4,
+      "PARAM_TYPE": 2,
+      "PARAM_NAME": "Permanent",
+      "PARAM_DESC": "PERMANENT"
+    },
+    {
+      "PARAM_ID": 5,
+      "PARAM_TYPE": 3,
+      "PARAM_NAME": "A",
+      "PARAM_DESC": "A"
+    },
+    {
+      "PARAM_ID": 6,
+      "PARAM_TYPE": 3,
+      "PARAM_NAME": "B",
+      "PARAM_DESC": "B"
+    },
+    {
+      "PARAM_ID": 7,
+      "PARAM_TYPE": 3,
+      "PARAM_NAME": "C",
+      "PARAM_DESC": "C"
+    },
+    {
+      "PARAM_ID": 8,
+      "PARAM_TYPE": 3,
+      "PARAM_NAME": "D",
+      "PARAM_DESC": "D"
+    },
+    {
+      "PARAM_ID": 9,
+      "PARAM_TYPE": 3,
+      "PARAM_NAME": "E",
+      "PARAM_DESC": "E"
+    },
+    {
+      "PARAM_ID": 13,
+      "PARAM_TYPE": 12,
+      "PARAM_NAME": "Male",
+      "PARAM_DESC": "Gender Status"
+    },
+    {
+      "PARAM_ID": 14,
+      "PARAM_TYPE": 12,
+      "PARAM_NAME": "Female",
+      "PARAM_DESC": "Gender Status"
+    },
+    {
+      "PARAM_ID": 15,
+      "PARAM_TYPE": 10,
+      "PARAM_NAME": "AB+",
+      "PARAM_DESC": "Blood Group"
+    },
+    {
+      "PARAM_ID": 16,
+      "PARAM_TYPE": 10,
+      "PARAM_NAME": "A+",
+      "PARAM_DESC": "Blood Group"
+    },
+    {
+      "PARAM_ID": 17,
+      "PARAM_TYPE": 10,
+      "PARAM_NAME": "B+",
+      "PARAM_DESC": "Blood Group"
+    },
+    {
+      "PARAM_ID": 18,
+      "PARAM_TYPE": 10,
+      "PARAM_NAME": "O+",
+      "PARAM_DESC": "Blood Group"
+    },
+    {
+      "PARAM_ID": 19,
+      "PARAM_TYPE": 10,
+      "PARAM_NAME": "AB-",
+      "PARAM_DESC": "Blood Group"
+    },
+    {
+      "PARAM_ID": 20,
+      "PARAM_TYPE": 10,
+      "PARAM_NAME": "A-",
+      "PARAM_DESC": "Blood Group"
+    },
+    {
+      "PARAM_ID": 21,
+      "PARAM_TYPE": 10,
+      "PARAM_NAME": "B-",
+      "PARAM_DESC": "Blood Group"
+    },
+    {
+      "PARAM_ID": 22,
+      "PARAM_TYPE": 10,
+      "PARAM_NAME": "O-",
+      "PARAM_DESC": "Blood Group"
+    },
+    {
+      "PARAM_ID": 23,
+      "PARAM_TYPE": 11,
+      "PARAM_NAME": "Married",
+      "PARAM_DESC": "Marital Status"
+    },
+    {
+      "PARAM_ID": 24,
+      "PARAM_TYPE": 11,
+      "PARAM_NAME": "UnMarried",
+      "PARAM_DESC": "Marital Status"
+    },
+    {
+      "PARAM_ID": 25,
+      "PARAM_TYPE": 7,
+      "PARAM_NAME": "Accounts",
+      "PARAM_DESC": "Department"
+    },
+    {
+      "PARAM_ID": 26,
+      "PARAM_TYPE": 7,
+      "PARAM_NAME": "Employee",
+      "PARAM_DESC": "Department"
+    },
+    {
+      "PARAM_ID": 27,
+      "PARAM_TYPE": 7,
+      "PARAM_NAME": "IT/Support",
+      "PARAM_DESC": "Department"
+    },
+    {
+      "PARAM_ID": 33,
+      "PARAM_TYPE": 8,
+      "PARAM_NAME": "Super Admin",
+      "PARAM_DESC": "Role"
+    },
+    {
+      "PARAM_ID": 34,
+      "PARAM_TYPE": 8,
+      "PARAM_NAME": "Admin",
+      "PARAM_DESC": "Role"
+    },
+    {
+      "PARAM_ID": 35,
+      "PARAM_TYPE": 8,
+      "PARAM_NAME": "HR",
+      "PARAM_DESC": "Role"
+    },
+    {
+      "PARAM_ID": 36,
+      "PARAM_TYPE": 8,
+      "PARAM_NAME": "HOD",
+      "PARAM_DESC": "Role"
+    },
+    {
+      "PARAM_ID": 37,
+      "PARAM_TYPE": 9,
+      "PARAM_NAME": "Faculty",
+      "PARAM_DESC": "Employee Type"
+    },
+    {
+      "PARAM_ID": 38,
+      "PARAM_TYPE": 9,
+      "PARAM_NAME": "Gues Faculty",
+      "PARAM_DESC": "Employee Type"
+    },
+    {
+      "PARAM_ID": 39,
+      "PARAM_TYPE": 9,
+      "PARAM_NAME": "Dean",
+      "PARAM_DESC": "Employee Type"
+    },
+    {
+      "PARAM_ID": 40,
+      "PARAM_TYPE": 9,
+      "PARAM_NAME": "TPO",
+      "PARAM_DESC": "Employee Type"
+    },
+    {
+      "PARAM_ID": 59,
+      "PARAM_TYPE": 13,
+      "PARAM_NAME": "General",
+      "PARAM_DESC": "Category"
+    },
+    {
+      "PARAM_ID": 60,
+      "PARAM_TYPE": 13,
+      "PARAM_NAME": "SC/ST",
+      "PARAM_DESC": "Category"
+    },
+    {
+      "PARAM_ID": 61,
+      "PARAM_TYPE": 13,
+      "PARAM_NAME": "OBC",
+      "PARAM_DESC": "Category"
+    },
+    {
+      "PARAM_ID": 62,
+      "PARAM_TYPE": 13,
+      "PARAM_NAME": "Other",
+      "PARAM_DESC": "Category"
+    },
+    {
+      "PARAM_ID": 63,
+      "PARAM_TYPE": 14,
+      "PARAM_NAME": "Hinduism",
+      "PARAM_DESC": "Religion"
+    },
+    {
+      "PARAM_ID": 64,
+      "PARAM_TYPE": 14,
+      "PARAM_NAME": "Buddhism",
+      "PARAM_DESC": "Religion"
+    },
+    {
+      "PARAM_ID": 65,
+      "PARAM_TYPE": 14,
+      "PARAM_NAME": "Islam",
+      "PARAM_DESC": "Religion"
+    },
+    {
+      "PARAM_ID": 66,
+      "PARAM_TYPE": 14,
+      "PARAM_NAME": "Christianity",
+      "PARAM_DESC": "Religion"
+    },
+    {
+      "PARAM_ID": 67,
+      "PARAM_TYPE": 14,
+      "PARAM_NAME": "Sikhism",
+      "PARAM_DESC": "Religion"
+    },
+    {
+      "PARAM_ID": 68,
+      "PARAM_TYPE": 15,
+      "PARAM_NAME": "Yes",
+      "PARAM_DESC": "Handicap"
+    },
+    {
+      "PARAM_ID": 69,
+      "PARAM_TYPE": 15,
+      "PARAM_NAME": "No",
+      "PARAM_DESC": "Handicap"
+    },
+    {
+      "PARAM_ID": 70,
+      "PARAM_TYPE": 16,
+      "PARAM_NAME": "Active",
+      "PARAM_DESC": "Is Active"
+    },
+    {
+      "PARAM_ID": 71,
+      "PARAM_TYPE": 16,
+      "PARAM_NAME": "In-Active",
+      "PARAM_DESC": "Is Active"
+    },
+    {
+      "PARAM_ID": 72,
+      "PARAM_TYPE": 16,
+      "PARAM_NAME": "Temporary",
+      "PARAM_DESC": "Is Active"
+    },
+    {
+      "PARAM_ID": 73,
+      "PARAM_TYPE": 17,
+      "PARAM_NAME": "Undergraduate",
+      "PARAM_DESC": "Course Type"
+    },
+    {
+      "PARAM_ID": 74,
+      "PARAM_TYPE": 17,
+      "PARAM_NAME": "Postgraduate",
+      "PARAM_DESC": "Course Type"
+    },
+    {
+      "PARAM_ID": 75,
+      "PARAM_TYPE": 17,
+      "PARAM_NAME": "Management Program",
+      "PARAM_DESC": "Course Type"
+    },
+    {
+      "PARAM_ID": 76,
+      "PARAM_TYPE": 17,
+      "PARAM_NAME": "Diploma",
+      "PARAM_DESC": "Course Type"
+    },
+    {
+      "PARAM_ID": 77,
+      "PARAM_TYPE": 18,
+      "PARAM_NAME": "English",
+      "PARAM_DESC": "Medium"
+    },
+    {
+      "PARAM_ID": 78,
+      "PARAM_TYPE": 18,
+      "PARAM_NAME": "Hindi",
+      "PARAM_DESC": "Medium"
+    },
+    {
+      "PARAM_ID": 79,
+      "PARAM_TYPE": 18,
+      "PARAM_NAME": "Practical",
+      "PARAM_DESC": "Medium"
+    },
+    {
+      "PARAM_ID": 80,
+      "PARAM_TYPE": 19,
+      "PARAM_NAME": "Compulsory",
+      "PARAM_DESC": "Subject Type"
+    },
+    {
+      "PARAM_ID": 81,
+      "PARAM_TYPE": 19,
+      "PARAM_NAME": "Elective",
+      "PARAM_DESC": "Subject Type"
+    }
+  ],
+  "Location": [
+    {
+      "LOCATION_ID": "1",
+      "LOCATION_NAME": "INDIA",
+      "PARENT_ID": null
+    },
+    {
+      "LOCATION_ID": "2",
+      "LOCATION_NAME": "UTTAR PARDESH",
+      "PARENT_ID": "1"
+    },
+    {
+      "LOCATION_ID": "3",
+      "LOCATION_NAME": "UTTRAKHAD",
+      "PARENT_ID": "1"
+    },
+    {
+      "LOCATION_ID": "4",
+      "LOCATION_NAME": "GAJIABAD",
+      "PARENT_ID": "2"
+    },
+    {
+      "LOCATION_ID": "5",
+      "LOCATION_NAME": "LUCKNOW",
+      "PARENT_ID": "2"
+    },
+    {
+      "LOCATION_ID": "6",
+      "LOCATION_NAME": "KANPUR",
+      "PARENT_ID": "2"
+    },
+    {
+      "LOCATION_ID": "7",
+      "LOCATION_NAME": "DEHRADUN",
+      "PARENT_ID": "3"
+    }
+  ]
+}
