@@ -194,44 +194,49 @@ textarea {
     z-index: 1000;
 }
 
-.etopmenu > ul > li {
-    display: inline-block;
+.etopmenu {
+    width: 100%;
+    text-align: right;
 }
 
-    .etopmenu > ul > li:not(:last-child) {
-        height: 25px;
-        padding-top: 5px;
-        border-right: 1px solid rgba(255,255,255,0.1);
-        padding-right: 10px;
+    .etopmenu > ul > li {
+        display: inline-block;
     }
 
-    .etopmenu > ul > li > a {
-        display: block;
-        float: left;
-        padding-left: 0;
-        font-weight: 500;
-        padding-right: 0;
-        margin-left: 20px;
-        position: relative;
-        color: rgba(255, 255, 255, 0.8);
-        transition: all 0.2s ease-in-out;
-    }
+        .etopmenu > ul > li:not(:last-child) {
+            height: 25px;
+            padding-top: 5px;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            padding-right: 10px;
+        }
 
-        .etopmenu > ul > li > a > svg {
-            width: 20px;
-            fill: rgba(255, 255, 255, 0.8);
-            margin-right: 3px;
-            margin-top: -1px;
+        .etopmenu > ul > li > a {
+            display: block;
+            float: left;
+            padding-left: 0;
+            font-weight: 500;
+            padding-right: 0;
+            margin-left: 20px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.8);
             transition: all 0.2s ease-in-out;
         }
 
-        .etopmenu > ul > li > a:hover {
-            color: rgba(255, 255, 255, 255);
-        }
-
-            .etopmenu > ul > li > a:hover svg {
-                fill: rgba(255, 255, 255, 255);
+            .etopmenu > ul > li > a > svg {
+                width: 20px;
+                fill: rgba(255, 255, 255, 0.8);
+                margin-right: 3px;
+                margin-top: -1px;
+                transition: all 0.2s ease-in-out;
             }
+
+            .etopmenu > ul > li > a:hover {
+                color: rgba(255, 255, 255, 255);
+            }
+
+                .etopmenu > ul > li > a:hover svg {
+                    fill: rgba(255, 255, 255, 255);
+                }
 
 .banner {
     background-image: linear-gradient(to right, #00a4bd, #00bda5);
@@ -239,7 +244,7 @@ textarea {
     display: inline-block;
     text-align: center;
     width: 100%;
-    height: 450px;
+    height: 500px;
     z-index: 1;
 }
 
@@ -283,8 +288,7 @@ textarea {
 
 .elgnbase {
     background: #fff;
-    width: 45%;
-    border-radius: 2px;
+    width: 40%;
     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.21);
     float: right;
     margin-top: 10%;
@@ -298,10 +302,8 @@ textarea {
     margin-bottom: 10px;
 }
 
-    .elgnttl h5 {
-        text-align: left;
-        padding: 10px;
-        letter-spacing: 1px;
+    .elgnttl h4 {
+        font-weight: 300;
     }
 
     .elgnttl span {
@@ -313,24 +315,147 @@ textarea {
     }
 
 .form-control {
-    border: 1px solid #999;
-    background: #fff;
-    border-radius: 2px;
-    font-size: 12px;
-    height: 35px;
-    box-shadow: none;
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+    background-color: #f8f9fa;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
     .form-control:focus {
-        border: 1px solid #999;
+        border: 1px solid rgba(0, 0, 0, 0.15);
         box-shadow: none;
         outline: 0;
+        background: #fff;
+        transition: all 0.4s ease-in-out;
     }
 
 .elgnform {
-    padding: 10px;
+    padding: 0px 30px;
 }
 
     .elgnform > ul > li {
         text-align: left;
     }
+
+.elgnuser {
+    margin-bottom: 15px;
+}
+
+    .elgnuser svg {
+        margin-top: -70px;
+        border-radius: 80px;
+        box-shadow: 0px -2px 4px rgba(0,0,0,0.3);
+    }
+
+.btn {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    border-radius: 0px;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.elgnform .btn {
+    width: 100%;
+}
+
+.elgnftr {
+    margin-bottom: -13px;
+    padding: 15px;
+    background: #f4f4f4;
+    border-top: 2px solid #eee;
+    margin-top: 20px;
+}
+
+.esidebar {
+    background: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21);
+    left: 0;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    width: 240px;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.elogo {
+    background: #232e40;
+    padding: 10px;
+    height: 15%;
+}
+
+.einrheader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 84.4%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #232e40;
+    padding: 0 15px 0 0;
+    z-index: 1000;
+}
+
+.dropdown-menu {
+    border: 0;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: #202939;
+    left: auto !important;
+    right: 0 !important;
+    top: 33px !important;
+    transform: none !important;
+    will-change: unset !important;
+}
+
+    .dropdown-menu > li > a {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 40px;
+        color: rgba(255, 255, 255, 0.8);
+        transition: all 0.2s ease-in-out;
+        font-size: 13px;
+    }
+
+        .dropdown-menu > li > a:hover {
+            background-color: #1c2533;
+            color: #FB9337;
+        }
+
+            .dropdown-menu > li > a:hover svg {
+                fill: #FB9337;
+            }
+
+        .dropdown-menu > li > a > svg {
+            width: 14%;
+            fill: rgba(255, 255, 255, 0.8);
+            /* float: left; */
+            margin-right: 10px;
+        }
