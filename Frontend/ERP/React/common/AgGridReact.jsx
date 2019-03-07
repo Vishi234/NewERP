@@ -39,9 +39,9 @@ class AgGrid extends React.Component {
     }
     render() {
         return (<div className="actionbse">
-                <div className="aclft pull-left">
+                <div className="aclft float-left">
                 </div>
-                <div className="acrght pull-right">
+                <div className="acrght float-right">
                     <input type="text" onChange={this.onFilterChange.bind(this)} placeholder="Quick Search..." className="form-control" />
                 </div>
                 <div id="myGrid" className="ag-theme-balham"></div>
