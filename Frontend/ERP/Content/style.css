@@ -195,17 +195,15 @@ textarea {
 }
 
 .etopmenu {
-    width: 100%;
     text-align: right;
 }
 
     .etopmenu > ul > li {
         display: inline-block;
+        padding: 0px;
     }
 
         .etopmenu > ul > li:not(:last-child) {
-            height: 25px;
-            padding-top: 5px;
             border-right: 1px solid rgba(255,255,255,0.1);
             padding-right: 10px;
         }
@@ -244,7 +242,7 @@ textarea {
     display: inline-block;
     text-align: center;
     width: 100%;
-    height: 500px;
+    height: 400px;
     z-index: 1;
 }
 
@@ -407,11 +405,19 @@ textarea {
     height: 15%;
 }
 
+.ebody {
+    position: absolute;
+    width: 82.4%;
+    display: block;
+    height: 100%;
+    right: 0;
+}
+
 .einrheader {
     position: fixed;
     top: 0;
     right: 0;
-    width: 84.4%;
+    width: 82.4%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -459,3 +465,132 @@ textarea {
             /* float: left; */
             margin-right: 10px;
         }
+
+.einrbody {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.esubmenu {
+    background: #eee;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding-left: 10px;
+}
+
+    .esubmenu > .breadcrumb {
+        background: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+        .esubmenu > .breadcrumb > li > a {
+            padding: 12.5px 3px;
+            display: block;
+            color: #555;
+        }
+
+            .esubmenu > .breadcrumb > li > a:hover {
+                color: #007bff;
+            }
+
+            .esubmenu > .breadcrumb > li > a.active {
+                cursor: default;
+                color: rgba(0, 0, 0, 0.21);
+            }
+
+.ever {
+    display: block;
+    padding: 12px;
+}
+
+.esidemenu {
+    flex-direction: column;
+    padding: 10px 20px;
+}
+
+    .esidemenu > ul > li > a {
+        font-size: 14.6px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        padding: 0;
+        color: #868e96;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        position: relative;
+        border-bottom: 1px solid #eee;
+        transition: all 0.4s ease-in-out;
+    }
+
+        .esidemenu > ul > li > a > svg {
+            width: 9%;
+            fill: #868e96;
+            float: left;
+            margin-right: 10px;
+            margin-top: -3px;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .esidemenu > ul > li > a:hover {
+            color: #495057
+        }
+
+            .esidemenu > ul > li > a:hover svg {
+                fill: #495057
+            }
+
+.pagebody {
+    padding: 30px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0;
+    border-radius: 0;
+}
+
+.card-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #32415A;
+    border-bottom: 1px solid #ccc;
+}
+
+.einrform .form-control {
+    height: 32px;
+    border-radius: 3px;
+}
+
+.einrform > li {
+    display: inline-block;
+    width: 20%;
+    margin-right: 10px;
+}
+
+    .einrform > li > .btn {
+        width: 35%;
+        padding: 6px;
+        margin-bottom: 3px;
+        border-radius: 3px;
+    }
+
+.input-validation-error {
+    border: 1px solid red !important;
+    background-color: #fff !important;
+}
+
+.field-validation-error {
+    color: red;
+    font-size: 12px !important;
+    font-weight: 300;
+}
