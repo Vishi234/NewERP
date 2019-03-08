@@ -1,0 +1,11 @@
+﻿@using Newtonsoft.Json;
+@{
+    ViewBag.Title = "Course";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="courseform"></div>
+<script type="text/javascript">
+    var content = @Html.Raw(JsonConvert.SerializeObject(TempData["CourseData"]));
+</script>
+<script src="@Url.Content("../../React/master/course.jsx")"></script>

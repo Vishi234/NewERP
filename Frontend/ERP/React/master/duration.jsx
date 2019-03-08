@@ -70,10 +70,10 @@
                 data: d,
                 async: false,
                 beforeSend: function () {
-                    btnloading("durationForm", 'show');
+                    btnloading("DurationForm", 'show');
                 },
                 success: function (data) {
-                    btnloading("durationForm", 'hide');
+                    btnloading("DurationForm", 'hide');
                     CallToast(data.msg, data.flag);
                     if (data.flag == "S") {
                         MyData = JSON.parse(data.addParams);
@@ -95,7 +95,7 @@
                     }
                 }.bind(this),
                 error: function (evt) {
-                    btnloading("durationForm", 'hide');
+                    btnloading("DurationForm", 'hide');
                     alert('Error! Please try again');
                 }
             })
@@ -217,71 +217,55 @@
         //Render form
         return (
             <div>
-                <div className="block-header container-fluid">
-                    <div className="row clearfix">
-                        <div className="col-lg-6 col-xs-12 col-sm-4 col-md-6">
-                            <h1>Course Semester Duration</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item">
-                                        <a href="javascript:void(0)">Master</a>
-                                    </li>
-                                    <li className="breadcrumb-item active" aria-current="page">
-                                        Duration
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <div className="col-lg-6 col-xs-12 col-sm-8 col-md-6">
-                            <h4 className="text-right font-14">{this.state.records} Record(S)</h4>
-                        </div>
+                <div className="esubmenu">
+                    <ul className="breadcrumb float-left">
+                        <li><a href="#">Home /</a></li>
+                        <li><a href="#">Pictures /</a></li>
+                        <li><a href="#">Summer 15 /</a></li>
+                        <li><a href="#" className="active">Summer 15</a></li>
+                    </ul>
+                    <div className="ever float-right">
+                        <span>Version : 0.0.1</span>
                     </div>
                 </div>
-                <div className="block-body container-fluid">
-                    <div className="row clearfix">
-                        <div className="col-lg-12 col-xs-12 col-md-12 col-sm-12">
-                            <div className="card">
-                                <div className="body">
-                                    <div className="acform">
-                                        <form name='durationForm' id="durationForm" noValidate onSubmit={this.handleSubmit}>
-                                            <ul>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedYear} data={this.state.academicYear} label={'Academic Year'} name={'academicYear'} htmlFor={'academicYear'} isrequired={true}
-                                                                 keyId={'YEAR_ID'} keyName={'ACADEMIC_YEAR'} onChange={this.onChangeYear} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedCourse} data={this.state.courseId} label={'Course'} name={'courseId'} htmlFor={'courseId'} isrequired={true}
-                                                                 keyId={'COURSE_ID'} keyName={'COURSE_NAME'} onChange={this.onChangeCourse} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedSemester} data={this.state.semester} label={'Semester'} name={'semester'} htmlFor={'semester'} isrequired={true}
-                                                                 keyId={'COURSE_ID'} keyName={'NO_OF_SEMESTER'} className={'form-control'} onChange={this.onChangeSemester} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'date'} value={this.state.wefDate} label={'Start Date'} name={'daterangepicker'} htmlFor={'wefDate'} isrequired={true}
-                                                                 className={'form-control'} onBlur={this.onBlurWefDate} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'date'} value={this.state.wetDate} label={'End Date'} name={'daterangepicker'} htmlFor={'wetDate'} isrequired={true}
-                                                                 className={'form-control'} onBlur={this.onBlurWetDate} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedActive} data={this.state.active} label={'Status'} name={'active'} htmlFor={'active'} isrequired={true}
-                                                        keyId={'PARAM_ID'} keyName={'PARAM_NAME'} onChange={this.onChangeActive} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <button type="submit" className="btn btn-success"><span className="inload hide"><i className="fa fa-spinner fa-spin"></i></span> {this.state.label}</button>
-                                                </li>
-                                            </ul>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="body">
-                                    <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
-                                </div>
-                            </div>
+                <div className="pagebody">
+                    <div className="einrformbase card p-4">
+                        <div className="card-title">
+                            Course Semester Duration
+                        </div>
+                        <div className="card-body">
+                            <form name='DurationForm' id="DurationForm" noValidate onSubmit={this.handleSubmit}>
+                                <ul className="einrform">
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedYear} data={this.state.academicYear} label={'Academic Year'} name={'academicYear'} htmlFor={'academicYear'} isrequired={true}
+                                            keyId={'YEAR_ID'} keyName={'ACADEMIC_YEAR'} onChange={this.onChangeYear} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedCourse} data={this.state.courseId} label={'Course'} name={'courseId'} htmlFor={'courseId'} isrequired={true}
+                                            keyId={'COURSE_ID'} keyName={'COURSE_NAME'} onChange={this.onChangeCourse} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedSemester} data={this.state.semester} label={'Semester'} name={'semester'} htmlFor={'semester'} isrequired={true}
+                                            keyId={'COURSE_ID'} keyName={'NO_OF_SEMESTER'} className={'form-control'} onChange={this.onChangeSemester} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'date'} value={this.state.wefDate} label={'Start Date'} name={'daterangepicker'} htmlFor={'wefDate'} isrequired={true}
+                                            className={'form-control'} onBlur={this.onBlurWefDate} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'date'} value={this.state.wetDate} label={'End Date'} name={'daterangepicker'} htmlFor={'wetDate'} isrequired={true}
+                                            className={'form-control'} onBlur={this.onBlurWetDate} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedActive} data={this.state.active} label={'Status'} name={'active'} htmlFor={'active'} isrequired={true}
+                                            keyId={'PARAM_ID'} keyName={'PARAM_NAME'} onChange={this.onChangeActive} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <button type="submit" className="btn btn-info"><span className="inload hide"><i className="fa fa-spinner fa-spin"></i></span> {this.state.label}</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
                         </div>
                     </div>
                 </div>

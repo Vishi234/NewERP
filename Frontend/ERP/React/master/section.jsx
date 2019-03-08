@@ -34,6 +34,7 @@ class SectionForm extends React.Component {
                 selectSectionName: 0,
                 columnDef: columnDefs,
                 rowData: records,
+                label: "Save",
                 active: ReadDropDownData("Param", '16', true),
                 records: ((records == null) ? 0 : records.length),
             };
@@ -98,10 +99,10 @@ class SectionForm extends React.Component {
                 data: d,
                 async: false,
                 beforeSend: function () {
-                    $("#progress").show();
+                    btnloading("SectionForm", 'show');
                 },
                 success: function (data) {
-                    $("#progress").hide();
+                    btnloading("SectionForm", 'hide');
                     CallToast(data.msg, data.flag);
                     if (data.flag == "S") {
                         debugger;
@@ -126,7 +127,7 @@ class SectionForm extends React.Component {
                 }.bind(this),
                 error: function (e) {
                     console.log(e);
-                    $("#progress").hide();
+                    btnloading("SectionForm", 'hide');
                     alert('Error! Please try again');
                 }
             })
@@ -226,64 +227,47 @@ class SectionForm extends React.Component {
     render() {
         return (
             <div>
-                <div className="block-header container-fluid">
-                    <div className="row clearfix">
-                        <div className="col-lg-6 col-xs-12 col-sm-4 col-md-6">
-                            <h1>Section Management</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item">
-                                        <a href="javascript:void(0)">Master</a>
-                                    </li>
-                                    <li className="breadcrumb-item active" aria-current="page">
-                                        Section
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <div className="col-lg-6 col-xs-12 col-sm-8 col-md-6">
-                            <h4 className="text-right font-14">{this.state.records} Record(S)</h4>
-                        </div>
+                <div className="esubmenu">
+                    <ul className="breadcrumb float-left">
+                        <li><a href="#">Home /</a></li>
+                        <li><a href="#">Pictures /</a></li>
+                        <li><a href="#">Summer 15 /</a></li>
+                        <li><a href="#" className="active">Summer 15</a></li>
+                    </ul>
+                    <div className="ever float-right">
+                        <span>Version : 0.0.1</span>
                     </div>
                 </div>
-                <div className="block-body container-fluid">
-                    <div className="row clearfix">
-                        <div className="col-lg-12 col-xs-12 col-md-12 col-sm-12">
-                            <div className="card">
-                                <div className="body">
-                                    <div className="acform">
-                                        <form name='CourseForm' noValidate onSubmit={this.handleSubmit}>
-                                            <ul>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectCourse} data={this.state.course} label={'Course'} name={'course'} htmlFor={'course'} isrequired={true}
-                                                        onChange={this.onChangeCourse.bind(this)} keyName={'COURSE_NAME'} keyId={'COURSE_ID'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectSemester} data={this.state.semester} label={'Semester'} name={'semester'} htmlFor={'semester'} isrequired={true}
-                                                        onChange={this.onChangeSemester.bind(this)} keyName={'SEMESTER_ID'} keyId={'SEMESTER_ID'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectSectionName} data={this.state.sectionName} label={'Section Name'} name={'sectionName'} htmlFor={'sectionName'} isrequired={true}
-                                                        onChange={this.onChangSectioneName.bind(this)} keyName={'PARAM_NAME'} keyId={'PARAM_NAME'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedActive} data={this.state.active} label={'Status'} name={'active'} htmlFor={'active'} isrequired={true}
-                                                        keyId={'PARAM_ID'} keyName={'PARAM_NAME'} onChange={this.onChangeActive.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <input type="submit" className="btn btn-success" value="Save" />
-                                                </li>
-
-                                            </ul>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="body">
-                                    <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
-                                </div>
-                            </div>
+                <div className="pagebody">
+                    <div className="einrformbase card p-4">
+                        <div className="card-title">
+                            Academic Year
+                        </div>
+                        <div className="card-body">
+                            <form name='SectionForm' id="SectionForm" noValidate onSubmit={this.handleSubmit}>
+                                <ul className="einrform">
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectCourse} data={this.state.course} label={'Course'} name={'course'} htmlFor={'course'} isrequired={true}
+                                            onChange={this.onChangeCourse.bind(this)} keyName={'COURSE_NAME'} keyId={'COURSE_ID'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectSemester} data={this.state.semester} label={'Semester'} name={'semester'} htmlFor={'semester'} isrequired={true}
+                                            onChange={this.onChangeSemester.bind(this)} keyName={'SEMESTER_ID'} keyId={'SEMESTER_ID'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectSectionName} data={this.state.sectionName} label={'Section Name'} name={'sectionName'} htmlFor={'sectionName'} isrequired={true}
+                                            onChange={this.onChangSectioneName.bind(this)} keyName={'PARAM_NAME'} keyId={'PARAM_NAME'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedActive} data={this.state.active} label={'Status'} name={'active'} htmlFor={'active'} isrequired={true}
+                                            keyId={'PARAM_ID'} keyName={'PARAM_NAME'} onChange={this.onChangeActive.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <button type="submit" className="btn btn-info"><span className="inload hide"><i className="fa fa-spinner fa-spin"></i></span>{this.state.label}</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
                         </div>
                     </div>
                 </div>

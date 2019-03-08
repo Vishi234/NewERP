@@ -124,13 +124,15 @@ function InitializeDate(name) {
     var thisYear = (new Date()).getFullYear();
     var start = new Date("1/1/" + thisYear);
     var defaultStart = moment(start.valueOf());
-    $('input[name=' + name + ']').daterangepicker({
-        singleDatePicker: true,
-        //minDate: moment(start.valueOf()).format("DD-MMM-YYYY"),
-        //startDate: moment(start.valueOf()).format("DD-MMM-YYYY"),
-        start: moment(),
-        locale: { format: 'DD-MMM-YYYY' }
-    });
+    $('input[name=' + name + ']').on("focus", function () {
+        $('input[name=' + name + ']').daterangepicker({
+            singleDatePicker: true,
+            //minDate: moment(start.valueOf()).format("DD-MMM-YYYY"),
+            //startDate: moment(start.valueOf()).format("DD-MMM-YYYY"),
+            start: moment(),
+            locale: { format: 'DD-MMM-YYYY' }
+        });
+    })
 }
 function ShowCreate() {
     $(".listorg").addClass("slideOutLeft");

@@ -32,7 +32,7 @@
     }
     isValid(input) {
         //check required field
-        if (input != undefined && input.getAttribute('type') != 'ddl') {
+        if (input.tagName == 'INPUT') {
             if (input.getAttribute('required') != null && input.value === "") {
                 input.classList.add('input-validation-error'); //add class error
                 input.nextSibling.classList.add('field-validation-error');
@@ -45,6 +45,22 @@
                 input.nextSibling.textContent = "";
                 return true;
             }
+        }
+        else if (input.tagName == "SELECT")
+        {
+            return true;
+            //if (input.getAttribute('required') != null && input.value == "0") {
+            //    input.classList.add('input-validation-error'); //add class error
+            //    input.nextSibling.classList.add('field-validation-error');
+            //    input.nextSibling.textContent = this.props.messageRequired; // show error message
+            //    return false;
+            //}
+            //else {
+            //    input.classList.remove('input-validation-error');
+            //    input.nextSibling.classList.remove('field-validation-error');
+            //    input.nextSibling.textContent = "";
+            //    return true;
+            //}
         }
 
     }

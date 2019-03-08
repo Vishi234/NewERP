@@ -306,6 +306,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Dashboard\Overview.cshtml" />
+    <Content Include="Views\Master\Activity.cshtml" />
+    <Content Include="Views\Cache\Index.cshtml" />
+    <Content Include="Views\Employee\Registration.cshtml" />
+    <Content Include="Views\Master\Course.cshtml" />
+    <Content Include="Views\Master\Duration.cshtml" />
+    <Content Include="Views\Master\Mapping.cshtml" />
+    <Content Include="Views\Master\Section.cshtml" />
+    <Content Include="Views\Master\Subject.cshtml" />
+    <Content Include="Views\Registration\Registration.cshtml" />
+    <Content Include="Views\Student\Admission.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
