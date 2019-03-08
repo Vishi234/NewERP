@@ -18,7 +18,7 @@ class AcademicYearForm extends React.Component {
                 }
             }
         }
-       // var columnDefs = columns;
+        // var columnDefs = columns;
         this.state =
             {
                 yearId: 1,
@@ -34,7 +34,7 @@ class AcademicYearForm extends React.Component {
                 records: ((records == null) ? 0 : records.length),
                 ServerMessage: '',
                 label: "Save",
-                flag:"A",
+                flag: "A",
             };
         this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -67,7 +67,7 @@ class AcademicYearForm extends React.Component {
                 wtDate: this.state.wtDate,
                 yearId: this.state.yearId,
                 active: this.state.selectedActive,
-                flag: this.state.flag ,
+                flag: this.state.flag,
                 reportId: 1
             }
             $.ajax({
@@ -117,13 +117,13 @@ class AcademicYearForm extends React.Component {
         var data = JSON.parse(param.currentTarget.getAttribute("dataattr"));
         this.setState
             ({
-                yearId:data.id,
+                yearId: data.id,
                 academicYear: data.acYear,
                 wfDate: data.wfDate,
                 wtDate: data.wtDate,
                 selectedActive: data.isActive,
                 label: "Update",
-                flag:"M"
+                flag: "M"
 
             })
     }
@@ -133,7 +133,7 @@ class AcademicYearForm extends React.Component {
         var domElement = "";
         var jsonObj = JSON.stringify(params.data);
 
-        html = '<div><a class="testClass" href="javascript:void(0)" dataAttr=' + jsonObj + '><img style="height: 16px;margin-top: 5px;margin-left:5px;"  src="../images/icons/edit.png"></img></a></div>';
+        html = '<div><a className="testClass" href="javascript:void(0)" dataAttr=' + jsonObj + '><img style="height: 16px;margin-top: 5px;margin-left:5px;"  src="../images/icons/edit.png"></img></a></div>';
         domElement = document.createElement("div");
         domElement.innerHTML = html;
         return domElement;
@@ -149,13 +149,13 @@ class AcademicYearForm extends React.Component {
         var html = "";
         var domElement = "";
         if ((params.data.isActive).trim() == 70) {
-            html = '<span style="margin-top: 5px;padding: 6px 20px;" class="badge badge-pill badge-success">Active</span>'
+            html = '<span style="margin-top: 5px;padding: 6px 20px;" className="badge badge-pill badge-success">Active</span>'
         }
         else if ((params.data.isActive).trim() == 71) {
-            html = '<span style="margin-top: 5px;padding: 6px 15px;" class="badge badge-pill badge-danger">In-Active</span>'
+            html = '<span style="margin-top: 5px;padding: 6px 15px;" className="badge badge-pill badge-danger">In-Active</span>'
         }
         else {
-            html = '<span style="margin-top: 5px;padding: 6px 10px;" class="badge badge-pill badge-warning">Temporary</span>'
+            html = '<span style="margin-top: 5px;padding: 6px 10px;" className="badge badge-pill badge-warning">Temporary</span>'
         }
 
         domElement = document.createElement("div");
@@ -213,67 +213,46 @@ class AcademicYearForm extends React.Component {
         //Render form
         return (
             <div>
-                <div className="block-header container-fluid">
-                    <div className="row clearfix">
-                        <div className="col-lg-6 col-xs-12 col-sm-4 col-md-6">
-                            <h1>Academic Year</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item">
-                                        <a href="javascript:void(0)">Master</a>
-                                    </li>
-                                    <li className="breadcrumb-item active" aria-current="page">
-                                        Academic Year
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <div className="col-lg-6 col-xs-12 col-sm-8 col-md-6">
-                            <h4 className="text-right font-14">{this.state.records} Record(S)</h4>
-                        </div>
+                <div className="esubmenu">
+                    <ul className="breadcrumb float-left">
+                        <li><a href="#">Home /</a></li>
+                        <li><a href="#">Pictures /</a></li>
+                        <li><a href="#">Summer 15 /</a></li>
+                        <li><a href="#" className="active">Summer 15</a></li>
+                    </ul>
+                    <div className="ever float-right">
+                        <span>Version : 0.0.1</span>
                     </div>
                 </div>
-                <div className="block-body container-fluid">
-                    <div className="row clearfix">
-                        <div className="col-lg-12 col-xs-12 col-md-12 col-sm-12">
-                            <div className="card">
-                                <div className="body">
-                                    <div className="acform">
-                                        <form name='AcademicYear' id="academicYear" noValidate onSubmit={this.handleSubmit}>
-                                            <ul>
-                                                <li>
-                                                <CreateInput type={'text'} value={this.state.academicYear} label={'Academic Year'} name={'academicYear'} htmlFor={'academicYear'} isrequired={true}
-                                                             onChange={this.onChangeYear.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                <CreateInput type={'date'} value={this.state.wfDate} id={'wfDate'} label={'Start Date'} name={'startDate'} htmlFor={'wfDate'} isrequired={true}
-                                                             className={'startDate form-control'} onBlur={this.onWefBlur.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                <CreateInput type={'date'} value={this.state.wtDate} id={'wtDate'} label={'End Date'} name={'endDate'} htmlFor={'wtDate'} isrequired={true}
-                                                             className={'endDate form-control'} onBlur={this.onWetBlur.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedActive} data={this.state.active} label={'Status'} name={'active'} htmlFor={'active'} isrequired={true}
-                                                    keyId={'PARAM_ID'} keyName={'PARAM_NAME'} onChange={this.onChangeActive.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <button type="submit" className="btn btn-success"><span className="inload hide"><i className="fa fa-spinner fa-spin"></i></span>{this.state.label}</button>
-
-                                                </li>
-                                            </ul>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="body">
-                                    <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
-                                </div>
-                            </div>
+                <div className="pagebody">
+                    <div className="einrformbase card p-4">
+                        <div className="card-title">
+                            Academic Year
+                        </div>
+                        <div className="card-body">
+                            <form name='AcademicYear' id="academicYear" noValidate onSubmit={this.handleSubmit}>
+                                <ul className="einrform">
+                                    <li>
+                                        <CreateInput type={'text'} value={this.state.academicYear} label={'Academic Year'} name={'academicYear'} htmlFor={'academicYear'} isrequired={true}
+                                                     onChange={this.onChangeYear.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'date'} value={this.state.wfDate} id={'wfDate'} label={'Start Date'} name={'startDate'} htmlFor={'wfDate'} isrequired={true}
+                                                     className={'startDate form-control'} onBlur={this.onWefBlur.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'date'} value={this.state.wtDate} id={'wtDate'} label={'End Date'} name={'endDate'} htmlFor={'wtDate'} isrequired={true}
+                                                     className={'endDate form-control'} onBlur={this.onWetBlur.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <button type="submit" className="btn btn-info"><span className="inload hide"><i className="fa fa-spinner fa-spin"></i></span>{this.state.label}</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
                         </div>
                     </div>
+                    
                 </div>
             </div>
         );

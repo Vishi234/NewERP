@@ -220,3 +220,9 @@ C:\Users\vishal.singh\Documents\GitHub\NewERP\Frontend\ERP\bin\x64\v8-x64.dll
 C:\Users\vishal.singh\Documents\GitHub\NewERP\Frontend\ERP\bin\x86\ClearScriptV8-32.dll
 C:\Users\vishal.singh\Documents\GitHub\NewERP\Frontend\ERP\bin\x86\v8-base-ia32.dll
 C:\Users\vishal.singh\Documents\GitHub\NewERP\Frontend\ERP\bin\x86\v8-ia32.dll
+C:\Users\HP\Documents\GitHub\NewERP\Frontend\ERP\bin\x64\ClearScriptV8-64.dll
+C:\Users\HP\Documents\GitHub\NewERP\Frontend\ERP\bin\x64\v8-base-x64.dll
+C:\Users\HP\Documents\GitHub\NewERP\Frontend\ERP\bin\x64\v8-x64.dll
+C:\Users\HP\Documents\GitHub\NewERP\Frontend\ERP\bin\x86\ClearScriptV8-32.dll
+C:\Users\HP\Documents\GitHub\NewERP\Frontend\ERP\bin\x86\v8-base-ia32.dll
+C:\Users\HP\Documents\GitHub\NewERP\Frontend\ERP\bin\x86\v8-ia32.dll

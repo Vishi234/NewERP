@@ -336,6 +336,11 @@ textarea {
         transition: all 0.4s ease-in-out;
     }
 
+    .form-control:disabled, .form-control[readonly] {
+        background-color: #f8f9fa;
+        opacity: 1;
+    }
+
 .elgnform {
     padding: 0px 30px;
 }
@@ -368,6 +373,10 @@ textarea {
     border-radius: 0px;
     transition: all 0.15s ease-in-out;
 }
+
+    .btn > span > svg {
+        margin-right: 5px;
+    }
 
 .btn-info {
     color: #fff;
@@ -402,22 +411,22 @@ textarea {
 .elogo {
     background: #232e40;
     padding: 10px;
-    height: 15%;
+    height: 13%;
 }
 
 .ebody {
-    position: absolute;
-    width: 82.4%;
+    position: relative;
+    width: 84.2%;
     display: block;
+    float: right;
     height: 100%;
-    right: 0;
 }
 
 .einrheader {
     position: fixed;
     top: 0;
     right: 0;
-    width: 82.4%;
+    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -535,11 +544,11 @@ textarea {
         }
 
         .esidemenu > ul > li > a:hover {
-            color: #495057
+            color: #495057;
         }
 
             .esidemenu > ul > li > a:hover svg {
-                fill: #495057
+                fill: #495057;
             }
 
 .pagebody {
@@ -575,6 +584,7 @@ textarea {
     display: inline-block;
     width: 20%;
     margin-right: 10px;
+    float: left;
 }
 
     .einrform > li > .btn {
@@ -582,6 +592,7 @@ textarea {
         padding: 6px;
         margin-bottom: 3px;
         border-radius: 3px;
+        margin-top: 27px;
     }
 
 .input-validation-error {
@@ -593,4 +604,37 @@ textarea {
     color: red;
     font-size: 12px !important;
     font-weight: 300;
+}
+
+.date .calendarbase {
+    display: inline-block;
+}
+
+.calendarbase {
+    height: 15px;
+    overflow: hidden;
+    float: right;
+    width: 17px;
+    display: none;
+    /* position: absolute; */
+    margin-top: -40px;
+    margin-right: 10px;
+}
+
+    .calendarbase img {
+        width: 100%;
+        height: 100%;
+    }
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.actionbse {
+    display: inline-block;
+    width: 100%;
 }

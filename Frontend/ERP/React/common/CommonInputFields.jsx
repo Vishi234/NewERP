@@ -9,7 +9,7 @@
         }
     }
     validate(value) {
-        debugger;
+        
         if (this.props.validate && this.props.validate(value)) {
             this.setState({
                 valid: true,

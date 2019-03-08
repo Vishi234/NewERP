@@ -162,6 +162,28 @@
     <Content Include="Content\v4-shims.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\admin_bg.jpg" />
+    <Content Include="Images\calendar.png" />
+    <Content Include="Images\chosen-sprite%402x.png" />
+    <Content Include="Images\chosen-sprite.png" />
+    <Content Include="Images\circle.svg" />
+    <Content Include="Images\icons\accounts.svg" />
+    <Content Include="Images\icons\address.svg" />
+    <Content Include="Images\icons\authentication.svg" />
+    <Content Include="Images\icons\cap.svg" />
+    <Content Include="Images\icons\edit.png" />
+    <Content Include="Images\icons\experience.svg" />
+    <Content Include="Images\icons\fog.svg" />
+    <Content Include="Images\icons\info.svg" />
+    <Content Include="Images\icons\mail.svg" />
+    <Content Include="Images\icons\notification.svg" />
+    <Content Include="Images\icons\personal.svg" />
+    <Content Include="Images\icons\settings.svg" />
+    <Content Include="Images\icons\subject.svg" />
+    <Content Include="Images\icons\turn-off.svg" />
+    <Content Include="Images\icons\user.svg" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\user-img.png" />
     <Content Include="React\authorization\login.jsx" />
     <Content Include="React\common\AgGridReact.jsx" />
     <Content Include="React\common\CommonInputFields.jsx" />
@@ -283,6 +305,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Dashboard\Overview.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
