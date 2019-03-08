@@ -77,10 +77,10 @@ class MappingForm extends React.Component {
                 data: d,
                 async: false,
                 beforeSend: function () {
-                    btnloading("mappingForm", 'show');
+                    btnloading("MappingForm", 'show');
                 },
                 success: function (data) {
-                    btnloading("mappingForm", 'hide');
+                    btnloading("MappingForm", 'hide');
                     CallToast(data.msg, data.flag);
                     if (data.flag == "S") {
                         MyData = JSON.parse(data.addParams);
@@ -104,7 +104,7 @@ class MappingForm extends React.Component {
                     }
                 }.bind(this),
                 error: function (e) {
-                    btnloading("mappingForm", 'hide');
+                    btnloading("MappingForm", 'hide');
                     alert('Error! Please try again');
                 }
             })
@@ -224,63 +224,47 @@ class MappingForm extends React.Component {
         //Render form
         return (
             <div>
-                <div className="block-header container-fluid">
-                    <div className="row clearfix">
-                        <div className="col-lg-6 col-xs-12 col-sm-4 col-md-6">
-                            <h1>Course Subject Mapping</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol className="breadcrumb">
-                                    <li className="breadcrumb-item">
-                                        <a href="javascript:void(0)">Master</a>
-                                    </li>
-                                    <li className="breadcrumb-item active" aria-current="page">
-                                        Mapping
-                                    </li>
-                                </ol>
-                            </nav>
-                        </div>
-                        <div className="col-lg-6 col-xs-12 col-sm-8 col-md-6">
-                            <h4 className="text-right font-14">{this.state.records} Record(S)</h4>
-                        </div>
+                <div className="esubmenu">
+                    <ul className="breadcrumb float-left">
+                        <li><a href="#">Home /</a></li>
+                        <li><a href="#">Pictures /</a></li>
+                        <li><a href="#">Summer 15 /</a></li>
+                        <li><a href="#" className="active">Summer 15</a></li>
+                    </ul>
+                    <div className="ever float-right">
+                        <span>Version : 0.0.1</span>
                     </div>
                 </div>
-                <div className="block-body container-fluid">
-                    <div className="row clearfix">
-                        <div className="col-lg-12 col-xs-12 col-md-12 col-sm-12">
-                            <div className="card">
-                                <div className="body">
-                                    <div className="acform">
-                                        <form name='MappingForm' id="MappingForm" noValidate onSubmit={this.handleSubmit}>
-                                            <ul>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedCourse} data={this.state.course} label={'Course'} name={'course'} htmlFor={'course'} isrequired={true}
-                                                        onChange={this.onChangeCourse.bind(this)} keyId={'COURSE_ID'} keyName={'COURSE_NAME'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedSemester} data={this.state.semester} label={'Semester'} name={'semester'} htmlFor={'semester'} isrequired={true}
-                                                        onChange={this.onChangeSemester.bind(this)} keyId={'NO_SEMESTER'} keyName={'NO_SEMESTER'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedSubject} data={this.state.subject} label={'Subject'} name={'subject'} htmlFor={'subject'} isrequired={true}
-                                                        onChange={this.onChangeSubject.bind(this)} keyId={'SUBJECT_ID'} keyName={'SUBJECT_NAME'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <CreateInput type={'ddl'} value={this.state.selectedActive} data={this.state.active} label={'Active'} name={'active'} htmlFor={'active'} isrequired={true}
-                                                        keyId={'PARAM_ID'} keyName={'PARAM_NAME'} onChange={this.onChangeActive.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
-                                                </li>
-                                                <li>
-                                                    <button type="submit" className="btn btn-success"><span className="inload hide"><i className="fa fa-spinner fa-spin"></i></span> {this.state.label}</button>
-                                                </li>
-                                            </ul>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="card">
-                                <div className="body">
-                                    <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
-                                </div>
-                            </div>
+                <div className="pagebody">
+                    <div className="einrformbase card p-4">
+                        <div className="card-title">
+                            Academic Year
+                        </div>
+                        <div className="card-body">
+                            <form name='MappingForm' id="MappingForm" noValidate onSubmit={this.handleSubmit}>
+                                <ul className="einrform">
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedCourse} data={this.state.course} label={'Course'} name={'course'} htmlFor={'course'} isrequired={true}
+                                            onChange={this.onChangeCourse.bind(this)} keyId={'COURSE_ID'} keyName={'COURSE_NAME'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedSemester} data={this.state.semester} label={'Semester'} name={'semester'} htmlFor={'semester'} isrequired={true}
+                                            onChange={this.onChangeSemester.bind(this)} keyId={'NO_SEMESTER'} keyName={'NO_SEMESTER'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedSubject} data={this.state.subject} label={'Subject'} name={'subject'} htmlFor={'subject'} isrequired={true}
+                                            onChange={this.onChangeSubject.bind(this)} keyId={'SUBJECT_ID'} keyName={'SUBJECT_NAME'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedActive} data={this.state.active} label={'Active'} name={'active'} htmlFor={'active'} isrequired={true}
+                                            keyId={'PARAM_ID'} keyName={'PARAM_NAME'} onChange={this.onChangeActive.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <button type="submit" className="btn btn-info"><span className="inload hide"><i className="fa fa-spinner fa-spin"></i></span> {this.state.label}</button>
+                                    </li>
+                                </ul>
+                            </form>
+                            <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
                         </div>
                     </div>
                 </div>

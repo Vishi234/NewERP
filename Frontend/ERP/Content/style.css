@@ -316,20 +316,20 @@ textarea {
     display: block;
     width: 100%;
     padding: 0.65rem 0.75rem;
-    font-size: 0.875rem;
+    font-size: 12px;
     line-height: 1.25;
     color: #495057;
     background-color: #fff;
     background-image: none;
     background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 0;
     background-color: #f8f9fa;
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
     .form-control:focus {
-        border: 1px solid rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.3);
         box-shadow: none;
         outline: 0;
         background: #fff;
@@ -399,11 +399,12 @@ textarea {
 .esidebar {
     background: #fff;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21);
+    float: left;
     left: 0;
     height: 100%;
     position: fixed;
     bottom: 0;
-    width: 240px;
+    width: 20%;
     background-color: #fff;
     transition: all 0.2s ease-in-out;
 }
@@ -411,12 +412,12 @@ textarea {
 .elogo {
     background: #232e40;
     padding: 10px;
-    height: 13%;
+    height: 15%;
 }
 
 .ebody {
     position: relative;
-    width: 84.2%;
+    width: 80%;
     display: block;
     float: right;
     height: 100%;
@@ -582,14 +583,17 @@ textarea {
 
 .einrform > li {
     display: inline-block;
-    width: 20%;
+    width: 17%;
     margin-right: 10px;
     float: left;
 }
 
+    .einrform > li:last-child {
+        width: auto;
+    }
+
     .einrform > li > .btn {
-        width: 35%;
-        padding: 6px;
+        padding: 6px 15px;
         margin-bottom: 3px;
         border-radius: 3px;
         margin-top: 27px;
@@ -604,6 +608,7 @@ textarea {
     color: red;
     font-size: 12px !important;
     font-weight: 300;
+    float: left;
 }
 
 .date .calendarbase {
@@ -626,10 +631,6 @@ textarea {
         height: 100%;
     }
 
-.show {
-    display: block !important;
-}
-
 .hide {
     display: none !important;
 }
@@ -637,4 +638,15 @@ textarea {
 .actionbse {
     display: inline-block;
     width: 100%;
+}
+
+.chosen-container-single .chosen-single {
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
+    border-radius: 3px !important;
+    height: 32px !important;
+    line-height: 30px !important;
+}
+
+.card-body {
+    padding: 0px;
 }

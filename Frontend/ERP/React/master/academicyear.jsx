@@ -47,7 +47,7 @@ class AcademicYearForm extends React.Component {
         e.preventDefault();
         fields.forEach(function (field) {
             if (typeof field[0].isValid === "function") {
-                debugger;
+
                 var validField;
                 if (field[0].props.type == 'ddl') {
                     validField = field[0].isValid(field[0].refs.MySelect2);
@@ -59,7 +59,7 @@ class AcademicYearForm extends React.Component {
         });
         //after validation complete post to server
         if (validForm) {
-            debugger;
+
             var d = {
                 yearCode: this.state.yearCode,
                 academicYear: this.state.academicYear,
@@ -75,10 +75,10 @@ class AcademicYearForm extends React.Component {
                 url: this.props.urlPost,
                 data: d,
                 beforeSend: function () {
-                    btnloading("academicYear", 'show');
+                    btnloading("AcademicYear", 'show');
                 },
                 success: function (data) {
-                    btnloading("academicYear", 'hide');
+                    btnloading("AcademicYear", 'hide');
                     CallToast(data.msg, data.flag);
                     if (data.flag == "S") {
                         MyData = JSON.parse(data.addParams);
@@ -99,7 +99,7 @@ class AcademicYearForm extends React.Component {
                     }
                 }.bind(this),
                 error: function (evt) {
-                    btnloading("academicYear", 'hide');
+                    btnloading("AcademicYear", 'hide');
                     alert('Error! Please try again');
                 }
             })
@@ -113,7 +113,7 @@ class AcademicYearForm extends React.Component {
         });
     }
     handleClick(param) {
-        debugger;
+
         var data = JSON.parse(param.currentTarget.getAttribute("dataattr"));
         this.setState
             ({
@@ -133,7 +133,7 @@ class AcademicYearForm extends React.Component {
         var domElement = "";
         var jsonObj = JSON.stringify(params.data);
 
-        html = '<div><a className="testClass" href="javascript:void(0)" dataAttr=' + jsonObj + '><img style="height: 16px;margin-top: 5px;margin-left:5px;"  src="../images/icons/edit.png"></img></a></div>';
+        html = "<div><a class='testClass' href='javascript:void(0)' dataAttr='" + jsonObj + "'><img style='height: 16px;margin-top: 5px;margin-left:5px;'  src='../images/icons/edit.png'></img></a></div>";
         domElement = document.createElement("div");
         domElement.innerHTML = html;
         return domElement;
@@ -145,17 +145,17 @@ class AcademicYearForm extends React.Component {
         $('.testClass').on("click", this.handleClick.bind(this));
     }
     CreateActive(params) {
-        debugger;
+
         var html = "";
         var domElement = "";
         if ((params.data.isActive).trim() == 70) {
-            html = '<span style="margin-top: 5px;padding: 6px 20px;" className="badge badge-pill badge-success">Active</span>'
+            html = '<span style="margin-top: 5px;padding: 6px 20px;" class="badge badge-success">Active</span>'
         }
         else if ((params.data.isActive).trim() == 71) {
-            html = '<span style="margin-top: 5px;padding: 6px 15px;" className="badge badge-pill badge-danger">In-Active</span>'
+            html = '<span style="margin-top: 5px;padding: 6px 15px;" class="badge badge-danger">In-Active</span>'
         }
         else {
-            html = '<span style="margin-top: 5px;padding: 6px 10px;" className="badge badge-pill badge-warning">Temporary</span>'
+            html = '<span style="margin-top: 5px;padding: 6px 10px;" class="badge badge-warning">Temporary</span>'
         }
 
         domElement = document.createElement("div");
@@ -230,19 +230,23 @@ class AcademicYearForm extends React.Component {
                             Academic Year
                         </div>
                         <div className="card-body">
-                            <form name='AcademicYear' id="academicYear" noValidate onSubmit={this.handleSubmit}>
+                            <form name='AcademicYear' id="AcademicYear" noValidate onSubmit={this.handleSubmit}>
                                 <ul className="einrform">
                                     <li>
                                         <CreateInput type={'text'} value={this.state.academicYear} label={'Academic Year'} name={'academicYear'} htmlFor={'academicYear'} isrequired={true}
-                                                     onChange={this.onChangeYear.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                            onChange={this.onChangeYear.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
                                     </li>
                                     <li>
                                         <CreateInput type={'date'} value={this.state.wfDate} id={'wfDate'} label={'Start Date'} name={'startDate'} htmlFor={'wfDate'} isrequired={true}
-                                                     className={'startDate form-control'} onBlur={this.onWefBlur.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
+                                            className={'startDate form-control'} onBlur={this.onWefBlur.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
                                     </li>
                                     <li>
                                         <CreateInput type={'date'} value={this.state.wtDate} id={'wtDate'} label={'End Date'} name={'endDate'} htmlFor={'wtDate'} isrequired={true}
-                                                     className={'endDate form-control'} onBlur={this.onWetBlur.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
+                                            className={'endDate form-control'} onBlur={this.onWetBlur.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
+                                    </li>
+                                    <li>
+                                        <CreateInput type={'ddl'} value={this.state.selectedActive} data={this.state.active} label={'Status'} name={'active'} htmlFor={'active'} isrequired={true}
+                                            keyId={'PARAM_ID'} keyName={'PARAM_NAME'} onChange={this.onChangeActive.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
                                     </li>
                                     <li>
                                         <button type="submit" className="btn btn-info"><span className="inload hide"><i className="fa fa-spinner fa-spin"></i></span>{this.state.label}</button>
@@ -252,7 +256,6 @@ class AcademicYearForm extends React.Component {
                             <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
                         </div>
                     </div>
-                    
                 </div>
             </div>
         );

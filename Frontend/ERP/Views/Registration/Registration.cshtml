@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!Doctype>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" scale="1"/>
+    <title>Registration</title>
+    @Styles.Render("~/bundles/css")
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/react")
+</head>
+<body>
+    <div id="Registration"></div>
+    <script src="@Url.Content("../../React/Registration/Registration.jsx")"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<style>
+    .cliente {
+        margin-top: 10px;
+        border: #cdcdcd medium solid;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" scale="1" />
+    <title>Registration</title>
+    @Styles.Render("~/bundles/css")
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/react")
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div>
+            <p>Refresh Location Cache</p>
+
+            <div class="row text-center">
+                <div class="col-md-4 ">
+                    <div class="cliente">
+                        panel 1
+                    </div>
+                </div>
+                <div class="col-md-4 "><div class="cliente">panel 2</div></div>
+                <div class="col-md-4 "><div class="cliente">panel 3</div></div>
+            </div>
+        </div>
+        <div>
+            <p>Refresh Grid Cache</p>
+            <div class="row text-center">
+                <div class="col-md-4 ">
+                    <div class="cliente">
+                        <input type="Button" class="btn-primary" value="Refresh Grid Settings" onclick="window.location.href='@Url.Action("RefreshGridSettings")'" />
+                    </div>
+                </div>
+                <div class="col-md-4 "><div class="cliente"><input type="Button" class="btn-primary" value="Refresh All Dropdown" onclick="window.location.href='@Url.Action("RefreshAllDropDown")'" /></div></div>
+                <div class="col-md-4 "><div class="cliente">Grid-1</div></div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

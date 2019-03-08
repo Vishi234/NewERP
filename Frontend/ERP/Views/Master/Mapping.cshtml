@@ -1,0 +1,11 @@
+﻿@using Newtonsoft.Json;
+@{
+    ViewBag.Title = "Mapping";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="mappingform"></div>
+<script type="text/javascript">
+    var content = @Html.Raw(JsonConvert.SerializeObject(TempData["MappingData"]));
+</script>
+<script src="@Url.Content("../../React/master/mapping.jsx")"></script>
+
