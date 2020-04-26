@@ -68,7 +68,6 @@
                 type: "POST",
                 url: this.props.urlPost,
                 data: d,
-                async: false,
                 beforeSend: function () {
                     btnloading("DurationForm", 'show');
                 },
@@ -90,6 +89,8 @@
                                 wetDate: "",
                                 active: ReadDropDownData("Param", '16', true),
                                 selectedActive: 0,
+                                label: "Save",
+                                flag: "A"
                             })
                         this.setState({ rowData: MyData });
                     }

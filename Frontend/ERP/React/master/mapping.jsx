@@ -75,7 +75,6 @@ class MappingForm extends React.Component {
                 type: "POST",
                 url: this.props.urlPost,
                 data: d,
-                async: false,
                 beforeSend: function () {
                     btnloading("MappingForm", 'show');
                 },
@@ -96,6 +95,8 @@ class MappingForm extends React.Component {
                                 selectedType: 0,
                                 active: ReadDropDownData("Param", 16, true),
                                 selectedCourseType: 0,
+                                label: "Save",
+                                flag: "A",
 
                             })
                         this.setState({ rowData: MyData });
@@ -108,6 +109,7 @@ class MappingForm extends React.Component {
                     alert('Error! Please try again');
                 }
             })
+            e.preventDefault();
         }
     }
     register(field) {
@@ -238,7 +240,7 @@ class MappingForm extends React.Component {
                 <div className="pagebody">
                     <div className="einrformbase card p-4">
                         <div className="card-title">
-                            Academic Year
+                            Course Subject Mapping
                         </div>
                         <div className="card-body">
                             <form name='MappingForm' id="MappingForm" noValidate onSubmit={this.handleSubmit}>

@@ -14,7 +14,7 @@
             }
         }
         return {
-            subjectId:"",
+            subjectId: "",
             subjectCode: "",
             subjectName: "",
             shortName: "",
@@ -65,7 +65,6 @@
                 type: "POST",
                 url: this.props.urlPost,
                 data: d,
-                async: false,
                 beforeSend: function () {
                     btnloading("SubjectForm", 'show');
                 },
@@ -86,6 +85,8 @@
                                 selectedMedium: 0,
                                 selectedActivityType: 0,
                                 selectedSubjectType: 0,
+                                label: "Save",
+                                flag: "A",
                             })
                         this.setState({ rowData: MyData });
                     }
@@ -187,7 +188,7 @@
         domElement = document.createElement("div");
         domElement.innerHTML = html;
         return domElement;
-    },  
+    },
     render: function () {
         //Render form
         return (
@@ -206,7 +207,7 @@
                 <div className="pagebody">
                     <div className="einrformbase card p-4">
                         <div className="card-title">
-                            Academic Year
+                            Subject Management
                         </div>
                         <div className="card-body">
                             <form name='SubjectForm' id="SubjectForm" noValidate onSubmit={this.handleSubmit}>

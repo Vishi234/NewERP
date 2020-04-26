@@ -1,11 +1,10 @@
 ﻿@using Newtonsoft.Json;
 @{
-    ViewBag.Title = "Registration";
+    ViewBag.Title = "Manage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<div id="employeeform"></div>
 <script type="text/javascript">
     var content = @Html.Raw(JsonConvert.SerializeObject(TempData["EmployeeData"]));
 </script>
-<div id="employeeform"></div>
 <script src="@Url.Content("../../React/employee/registration.jsx")"></script>

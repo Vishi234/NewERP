@@ -151,7 +151,7 @@ var LoginForm = React.createClass({
             <div>
                 <div className="eheader">
                     <div className="container-fluid">
-                        <div className="elogo float-left"></div>
+                        <div className="elogohome float-left"></div>
                         <div className="etopmenu float-right">
                             <ul>
                                 <li>

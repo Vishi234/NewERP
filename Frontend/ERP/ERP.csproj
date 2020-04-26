@@ -142,6 +142,7 @@
     <Content Include="Content\chosen.css" />
     <Content Include="Content\ConfigFiles\GridHeaders.xml" />
     <Content Include="Content\daterangepicker.css" />
+    <Content Include="Content\DynamicJs\Employee.js" />
     <Content Include="Content\DynamicJs\Master.js" />
     <Content Include="Content\fontawesome-all.css" />
     <Content Include="Content\fontawesome-all.min.css" />
@@ -189,8 +190,7 @@
     <Content Include="React\common\CommonInputFields.jsx" />
     <Content Include="React\configuration\createorg.jsx" />
     <Content Include="React\configuration\orglist.jsx" />
-    <Content Include="React\Employee\employeeRegis.jsx" />
-    <Content Include="React\Employee\registration.jsx" />
+    <Content Include="React\employee\registration.jsx" />
     <Content Include="React\master\academicyear.jsx" />
     <Content Include="React\master\activity.jsx" />
     <Content Include="React\master\course.jsx" />
@@ -198,8 +198,8 @@
     <Content Include="React\master\mapping.jsx" />
     <Content Include="React\master\section.jsx" />
     <Content Include="React\master\subject.jsx" />
-    <Content Include="React\Registration\Registration.jsx" />
     <Content Include="React\student\admission.jsx" />
+    <Content Include="React\student\manage.jsx" />
     <Content Include="Scripts\ag-grid.min.js" />
     <Content Include="Scripts\AppConfig.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -264,7 +264,6 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\MasterController.cs" />
-    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -308,14 +307,14 @@
     <Content Include="Views\Dashboard\Overview.cshtml" />
     <Content Include="Views\Master\Activity.cshtml" />
     <Content Include="Views\Cache\Index.cshtml" />
-    <Content Include="Views\Employee\Registration.cshtml" />
     <Content Include="Views\Master\Course.cshtml" />
     <Content Include="Views\Master\Duration.cshtml" />
     <Content Include="Views\Master\Mapping.cshtml" />
     <Content Include="Views\Master\Section.cshtml" />
     <Content Include="Views\Master\Subject.cshtml" />
-    <Content Include="Views\Registration\Registration.cshtml" />
     <Content Include="Views\Student\Admission.cshtml" />
+    <Content Include="Views\Employee\Manage.cshtml" />
+    <Content Include="Views\Student\Manage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

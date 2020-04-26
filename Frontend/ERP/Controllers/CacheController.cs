@@ -1,4 +1,5 @@
-﻿using ERP.Models.Cache;
+﻿using ERP.Models.Bal.Common;
+using ERP.Models.Cache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ERP.Controllers
 {
+    [SessionCheck]
     public class CacheController : Controller
     {
         // GET: Cache

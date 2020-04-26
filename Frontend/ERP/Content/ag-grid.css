@@ -929,7 +929,7 @@ ag-grid, ag-grid-angular, ag-grid-ng2, ag-grid-polymer, ag-grid-aurelia {
   background: #e5e5e5;
   border: 1px solid black;
   cursor: move;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   overflow: hidden;

@@ -1,4 +1,5 @@
-﻿using ERP.Models.Bal.Employee;
+﻿using ERP.Models.Bal.Common;
+using ERP.Models.Bal.Employee;
 using ERP.Models.Entity;
 using System;
 using System.Collections.Generic;
@@ -8,10 +9,16 @@ using System.Web.Mvc;
 
 namespace ERP.Controllers
 {
+    [SessionCheck]
     public class EmployeeController : Controller
     {
-        // GET: Employee
-        public ActionResult Registration()
+        
+        [HttpPost]
+        public ActionResult Registration(EmployeeEntity employeeEntity)
+        {
+            return Json(new Employee().AddEmployee(employeeEntity));
+        }
+        public ActionResult Manage()
         {
             EmployeeEntity employeeEntity = new EmployeeEntity();
             employeeEntity.flag = 'G';
@@ -19,23 +26,6 @@ namespace ERP.Controllers
             TempData["EmployeeData"] = new Employee().GetEmployee(employeeEntity);
             return View();
         }
-        [HttpPost]
-        public ActionResult Registration(EmployeeEntity employeeEntity)
-        {
-            return Json(new Employee().AddEmployee(employeeEntity));
-        }
-        //[HttpPost]
-        //public JsonResult AddContact(EmployeeEntity employeeEntity)
-        //{
-        //    UserEntity objUserEntity = UserEntity.GetInstance();
-        //    return Json(new Employee().AddUserContact(employeeEntity, objUserEntity.customerId, objUserEntity.userId));
-        //}
-
-        //[HttpPost]
-        //public JsonResult AddAuth(EmployeeEntity employeeEntity)
-        //{
-        //    UserEntity objUserEntity = UserEntity.GetInstance();
-        //    return Json(new Employee().AddUserAuth(employeeEntity, objUserEntity.customerId, objUserEntity.userId));
-        //}
+       
     }
 }

@@ -4,7 +4,7 @@ class AgGrid extends React.Component {
         gridOptions = {
             columnDefs: this.props.columnDef,
             enableSorting: true,
-            enableFilter: true,
+            enableFilter: false,
             rowData: null,
             rowHeight: 33,
             enableCellChangeFlash: true,
@@ -17,12 +17,12 @@ class AgGrid extends React.Component {
                 return '[' + params.value.toLocaleString() + ']';
             },
             onGridReady: function (params) {
-                var allColumnIds = [];
-                gridOptions.columnApi.getAllColumns().forEach(function (column) {
-                    allColumnIds.push(column.colId);
-                });
-                gridOptions.columnApi.autoSizeColumns(allColumnIds);
-                params.api.sizeColumnsToFit();
+                //var allColumnIds = [];
+                //gridOptions.columnApi.getAllColumns().forEach(function (column) {
+                //    allColumnIds.push(column.colId);
+                //});
+                //gridOptions.columnApi.autoSizeColumns(allColumnIds);
+                //params.api.sizeColumnsToFit();
             },
         }
         var gridDiv = document.querySelector('#myGrid');
@@ -39,11 +39,6 @@ class AgGrid extends React.Component {
     }
     render() {
         return (<div className="actionbse">
-                <div className="aclft float-left">
-                </div>
-                <div className="acrght float-right">
-                    <input type="text" onChange={this.onFilterChange.bind(this)} placeholder="Quick Search..." className="form-control" />
-                </div>
                 <div id="myGrid" className="ag-theme-balham"></div>
         </div>
         );

@@ -30,13 +30,7 @@
         $(this).toggleClass("userinfoactive");
         $(".top-sub-menu").toggleClass("show");
     });
-    $('.listbox').lwMultiSelect({
-        addAllText: "Select All",
-        removeAllText: "Remove All",
-        selectedLabel: "Values accepted",
-        maxSelect: 0, //0 = no restrictions
-        maxText: '',
-    });
+
     //$('#selector').val();
     //$('#selector').data('plugin_lwMultiSelect').updateList();
     //$('#selector').data('plugin_lwMultiSelect').selectAll();
@@ -124,15 +118,22 @@ function InitializeDate(name) {
     var thisYear = (new Date()).getFullYear();
     var start = new Date("1/1/" + thisYear);
     var defaultStart = moment(start.valueOf());
-    $('input[name=' + name + ']').on("focus", function () {
-        $('input[name=' + name + ']').daterangepicker({
-            singleDatePicker: true,
-            //minDate: moment(start.valueOf()).format("DD-MMM-YYYY"),
-            //startDate: moment(start.valueOf()).format("DD-MMM-YYYY"),
-            start: moment(),
-            locale: { format: 'DD-MMM-YYYY' }
-        });
-    })
+    $('input[name=' + name + ']').daterangepicker({
+        singleDatePicker: true,
+        //minDate: moment(start.valueOf()).format("DD-MMM-YYYY"),
+        //startDate: moment(start.valueOf()).format("DD-MMM-YYYY"),
+        start: moment(),
+        locale: { format: 'DD-MMM-YYYY' }
+    });
+}
+function InitializeSelectList(name) {
+    $('select[name=' + name + ']').lwMultiSelect({
+        addAllText: "Select All",
+        removeAllText: "Remove All",
+        selectedLabel: "Values accepted",
+        maxSelect: 0, //0 = no restrictions
+        maxText: '',
+    });
 }
 function ShowCreate() {
     $(".listorg").addClass("slideOutLeft");

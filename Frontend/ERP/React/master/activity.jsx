@@ -19,14 +19,14 @@ class ActivityForm extends React.Component {
         }
         this.state =
             {
-                actId:1,
+                actId: 1,
                 actName: "",
                 actType: ReadDropDownData("Param", "1", true),
                 active: ReadDropDownData("Param", '16', true),
                 selectedActive: 0,
                 selectedType: 0,
-                wfDate: "",
-                wetDate: "",
+                stDate: "",
+                endDate: "",
                 Fields: [],
                 columnDef: columnDefs,
                 rowData: records,
@@ -57,8 +57,8 @@ class ActivityForm extends React.Component {
                 active: this.state.selectedActive,
                 actName: this.state.actName,
                 actType: this.state.selectedType,
-                wfDate: this.state.wfDate,
-                wetDate: this.state.wetDate,
+                wfDate: this.state.stDate,
+                wetDate: this.state.endDate,
                 reportId: '6',
                 flag: this.state.flag,
             }
@@ -66,7 +66,6 @@ class ActivityForm extends React.Component {
                 type: "POST",
                 url: this.props.urlPost,
                 data: d,
-                async: false,
                 beforeSend: function () {
                     btnloading("ActivityForm", 'show');
                 },
@@ -78,12 +77,14 @@ class ActivityForm extends React.Component {
                         this.setState
                             ({
                                 actName: "",
-                                actType: ReadDropDownData("Param", "1", true),                              
+                                actType: ReadDropDownData("Param", "1", true),
                                 selectedType: 0,
-                                wfDate: "",
-                                wetDate: "",
+                                stDate: "",
+                                endDate: "",
                                 active: ReadDropDownData("Param", 16, true),
                                 selectedActive: 0,
+                                label: "Save",
+                                flag: "A"
                             })
                         this.setState({ rowData: MyData });
                         this.setState({ records: MyData.length })
@@ -95,6 +96,7 @@ class ActivityForm extends React.Component {
                     alert('Error! Please try again');
                 }
             })
+            e.preventDefault();
         }
     }
     onChangeactName(value) {
@@ -109,12 +111,12 @@ class ActivityForm extends React.Component {
     }
     onBlurWefDate(value) {
         this.setState({
-            wfDate: value
+            stDate: value
         });
     }
     onBlurWetDate(value) {
         this.setState({
-            wetDate: value
+            endDate: value
         });
     }
     onChangeActive(value) {
@@ -144,7 +146,7 @@ class ActivityForm extends React.Component {
         var domElement = "";
         var jsonObj = JSON.stringify(params.data);
 
-        html = "<div><a class='testClass' href='javascript:void(0)' dataAttr='" + jsonObj + "'><img style='height: 16px;margin-top: 5px;margin-left:5px;'  src='../images/icons/edit.png'></img></a></div>";
+        html = '<div><a class="testClass" href="javascript:void(0)" dataAttr=' + jsonObj + '><img style="height: 16px;margin-top: 5px;margin-left:5px;"  src="../images/icons/edit.png"></img></a></div>';
         domElement = document.createElement("div");
         domElement.innerHTML = html;
         return domElement;
@@ -200,23 +202,22 @@ class ActivityForm extends React.Component {
                            Activity
                         </div>
                         <div className="card-body">
-                            <form name='ActivityForm' id="ActivityForm" noValidate onSubmit={this.handleSubmit}>
+                            <form name='ActivityForm' id="ActivityForm" noValidate onSubmit={this.handleSubmit.bind(this)}>
                                 <ul className="einrform">
                                     <li>
                                         <CreateInput type={'text'} value={this.state.actName} label={'Activity Name'} name={'actName'} htmlFor={'actName'} isrequired={true}
-                                            onChange={this.onChangeactName.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
+                                        onChange={this.onChangeactName.bind(this)} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
                                     </li>
-
                                     <li>
                                         <CreateInput type={'ddl'} value={this.state.selectedType} data={this.state.actType} label={'Activity Type'} name={'actType'} htmlFor={'actType'} isrequired={true}
                                             onChange={this.onChangeactType.bind(this)} keyId={'PARAM_ID'} keyName={'PARAM_NAME'} className={'form-control'} onComponentMounted={this.register} messageRequired={'required.'} />
                                     </li>
                                     <li>
-                                        <CreateInput type={'date'} value={this.state.stDate} id={'wfDate'} label={'Start Date'} name={'startDate'} htmlFor={'wfDate'} isrequired={true}
+                                        <CreateInput type={'date'} value={this.state.stDate} id={'stDate'} label={'Start Date'} name={'stDate'} htmlFor={'stDate'} isrequired={true}
                                             className={'startDate form-control'} onBlur={this.onBlurWefDate.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
                                     </li>
                                     <li>
-                                        <CreateInput type={'date'} value={this.state.endDate} id={'wtDate'} label={'End Date'} name={'endDate'} htmlFor={'wtDate'} isrequired={true}
+                                        <CreateInput type={'date'} value={this.state.endDate} id={'endDate'} label={'End Date'} name={'endDate'} htmlFor={'endDate'} isrequired={true}
                                             className={'endDate form-control'} onBlur={this.onBlurWetDate.bind(this)} onComponentMounted={this.register} messageRequired={'required.'} />
                                     </li>
                                     <li>
@@ -231,7 +232,6 @@ class ActivityForm extends React.Component {
                             <AgGrid columnDef={this.state.columnDef} rowData={this.state.rowData} />
                         </div>
                     </div>
-
                 </div>
             </div>
         );

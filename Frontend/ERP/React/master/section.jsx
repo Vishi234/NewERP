@@ -97,7 +97,6 @@ class SectionForm extends React.Component {
                 type: "POST",
                 url: '/Master/SaveSectionDetails',
                 data: d,
-                async: false,
                 beforeSend: function () {
                     btnloading("SectionForm", 'show');
                 },
@@ -131,6 +130,7 @@ class SectionForm extends React.Component {
                     alert('Error! Please try again');
                 }
             })
+            e.preventDefault();
         }
     }
     onChangeCourse(value)

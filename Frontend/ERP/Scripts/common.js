@@ -45,20 +45,62 @@ function GetJsonData(path) {
     return resData;
 }
 function ReadDropDownData(key, customerId, isParam) {
+
     var MyData = null;
     var jsonData = GetJsonData('../../Content/DynamicJs/DropdownData.json');
 
-    if (isParam == false) {
-        MyData = $.grep(jsonData[key], function (item, i) {
-            return item.CUSTOMER_ID == customerId
-        });
+    if (isParam == false)
+    {
+        if (key == "Course" || key == "AcademicYear" || key == "Subject")
+        {
+            MyData = jsonData["" + key + ""];
+
+            if (MyData == null || MyData == undefined)
+              {
+                MyData = GetCommonDDL();
+                MyData = $.grep(MyData[key], function (item, i) {
+                    return item.CUSTOMER_ID == customerId
+                });
+              }
+            else {
+               MyData = $.grep(jsonData[key], function (item, i) {
+                   return item.CUSTOMER_ID == customerId
+               });
+           }
+        }
+        else {
+            MyData = $.grep(jsonData[key], function (item, i) {
+                return item.CUSTOMER_ID == customerId
+            });
+        }
     }
     else {
-        MyData = $.grep(jsonData[key], function (item, i) {
-            return item.PARAM_TYPE == customerId
-        });
+        
+            MyData = $.grep(jsonData[key], function (item, i) {
+                return item.PARAM_TYPE == customerId
+            });
+      
     }
     return MyData;
+}
+
+function GetCommonDDL() {
+    var resData = new Object();
+    $.ajax(
+        {
+            url: "/Cache/GetCommonDDL/",
+            type: 'get',
+            dataType: 'json',
+            async: false,
+            success: function (response)
+            {
+                resData = response;
+            },
+            error: function (xhr, status, error) {
+
+            }
+        })
+    return resData;
 }
 function ReadLocationData(key, locationType, selectedVal) {
     debugger;
